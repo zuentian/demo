@@ -1,11 +1,13 @@
+import time2019.UtilPrint;
+
 public class tet {
 
     public static void main(String[] args) {
 
-        String ss="1191292029";
 
-        String a=ss.substring(ss.length()-4,ss.length());
-        System.out.println(a);
+        int[] a={1,32,12};
+        a=new int[a.length+1];
+        UtilPrint.prtShuZu(a);
 
 
     }
