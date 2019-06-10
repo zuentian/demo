@@ -29,7 +29,7 @@ public class ClimbStairs {
      */
     public static void main(String[] args) {
 
-        System.out.println(f(4));
+        System.out.println(f(44));
     }
 
     public static int f(int n){
