@@ -6,5 +6,6 @@ public class UtilPrint {
         for(int i=0;i<digits.length;i++){
             System.out.print(digits[i]+" ");
         }
+        System.out.println();
     }
 }
