@@ -24,18 +24,36 @@ public class NodeMain {
        // System.out.println(nodeA);
 
         //preOrder(node);//中序遍历
-        System.out.println();
+        //System.out.println();
         //postOrder(node);//后序遍历
-        System.out.println();
+        //System.out.println();
         //midOrder(node);//中序遍历
-        System.out.println();
-        System.out.println(levelOrder(node));//层序遍历
+        //System.out.println();
+        //System.out.println(levelOrder(node));//层序遍历
         //System.out.println(getHight(node));//二叉树高度
         //System.out.println(getCount(node));//节点数
 
+        System.out.println(getParent(node,nodeM));
 
     }
 
+    //返回某节点的父亲节点
+    private static Node getParent(Node root,Node node){
+        if(root==null){
+            return null;
+        }
+        if(root.getRightChild()==node||root.getLeftChild()==node){
+            return root;
+        }
+
+        Node parent=null;
+        parent=getParent(root.getLeftChild(),node);
+        if(parent==null){
+            parent=getParent(root.getRightChild(),node);
+        }
+
+        return parent;
+    }
     private static List<List<String>> levelOrder(Node node){
         List<List<String>> reList=new ArrayList<List<String>>();
         Queue<Node> queue=new LinkedList<>();
