@@ -1,4 +1,7 @@
 package time2019;
+
+import java.util.*;
+
 /*
 将一个按照升序排列的有序数组，转换为一棵高度平衡二叉搜索树。
 
@@ -7,6 +10,11 @@ package time2019;
 public class SortedArrayToBST {
 
     public static void main(String[] args) {
+
+        int[] nums={-1,0,2,12,15,19,20};
+        System.out.println(f(nums));
+        TreeNode node=f(nums);
+        System.out.println(UtilPrint.prtPrintTreeNode(node));
 
 
     }
@@ -21,13 +29,15 @@ public class SortedArrayToBST {
     public static TreeNode getTree(int[]nums,int l,int r){
 
         if(l<=r){
-            int mid=(l+r)/r;
+            int mid=(l+r)/2;
             TreeNode node=new TreeNode(nums[mid]);
-            node.left=getTree(nums,1,mid-1);
+            node.left=getTree(nums,l,mid-1);
             node.right=getTree(nums,mid+1,r);
             return node;
         }else{
             return null;
         }
     }
+
+
 }
