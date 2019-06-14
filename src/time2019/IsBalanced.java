@@ -13,7 +13,43 @@ public class IsBalanced {
     }
 
     public static boolean f(TreeNode root){
+
+        if (root==null){
+            return true;
+        }
+        if(isBalance(root.left,root.right)){
+            if(root.left!=null){//如果左子树为空，就判断右子树
+                if (f(root.left)) {//如果左子树为平衡二叉树，就判断右子树
+                    return f(root.right);
+                }
+                return false;
+            }else{
+                return f(root.right);
+            }
+        }
         return false;
     }
 
+
+
+    public static boolean isBalance(TreeNode l,TreeNode r){
+
+        int value=Math.abs(maxDepth(l)-maxDepth(r));
+
+        if(value>1){
+            return false;
+        }
+
+        return true;
+    }
+    /*
+    求根节点的二叉树的高度
+     */
+    public static  int maxDepth(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        return Math.max(maxDepth(root.right),maxDepth(root.left))+1;
+
+    }
 }
