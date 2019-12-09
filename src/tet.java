@@ -1,14 +1,16 @@
-import time2019.UtilPrint;
-
 public class tet {
 
     public static void main(String[] args) {
 
-
-        int[] a={1,32,12};
-        a=new int[a.length+1];
-        UtilPrint.prtShuZu(a);
+        System.out.println(func(11219930));
 
 
+    }
+
+    public static String func(int i){
+        if(i>0){
+            return i%10+func(i/10);
+        }
+        return "";
     }
 }
